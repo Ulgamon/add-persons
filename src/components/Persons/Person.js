@@ -20,7 +20,7 @@ const Person = props => {
 
     return (
         <div className={`w-11/12 mx-auto my-1.5 rounded-lg border-2 border-lime-400 
-        bg-zinc-500 border-dashed transition-opacity duration-200 ease-in ${cssClass}`}>
+        bg-gray-800 border-dashed transition-opacity duration-200 ease-in ${cssClass}`}>
             <p className="text-center py-1 text-lg">{props.name} ({props.age} years old)</p>
         </div>
     )

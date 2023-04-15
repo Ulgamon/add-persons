@@ -64,7 +64,8 @@ const PersonForm = props => {
             />
             <button 
                 className="w-6/12 p-3 bg-white rounded-lg block mx-auto my-5 text-lg
-                mt-9 bg-gradient-to-r from-orange-400 to-orange-700 hover:from-cyan-600 hover:to-cyan-900 text-gray-800" 
+                mt-9 bg-gradient-to-r from-orange-400 to-orange-700 hover:from-lime-400
+                hover:to-lime-700 text-gray-800" 
                 type="submit">Add New Person</button>
         </form>
     )

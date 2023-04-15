@@ -3,7 +3,7 @@ import Person from "./Person"
 
 const PersonsList = props => {
     return (
-        <ul className={`w-10/12 lg:max-w-screen-md mx-auto bg-gray-800 p-4 rounded-lg shadow-2xl`}>
+        <ul className={`w-10/12 lg:max-w-screen-md mx-auto bg-sky-600 p-4 rounded-lg shadow-2xl`}>
             {props.items.map(person => 
                 <li key={person.id}>
                     <Person 

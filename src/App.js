@@ -13,7 +13,7 @@ function App() {
     {id: 2,name: 'Mita', age: 69},
   ])
 
-  const [modalError, setModalError] = React.useState({check: false, message: ''})
+  const [modalError, setModalError] = React.useState({check: false, title: '', message: ''})
 
   const [id, setId] = React.useState(3)
 
@@ -25,16 +25,19 @@ function App() {
   }
 
   let message = ''
+  let title = ''
 
   const callModal = (error) => {
     switch(error) {
       case 'name':
+        title = 'Invalid Input'
         message = 'Please enter a valid name and age (non-empty values).'
-        setModalError({check: true, message: message})
+        setModalError({check: true, title: title, message: message})
         return
       case 'age':
+        title = 'Invalid Age'
         message = 'Please enter a valid age (>0).'
-        setModalError({check: true, message: message})
+        setModalError({check: true, title: title, message: message})
         return
       default:
         throw new Error(`${error} is not a valid parameter.`)
@@ -42,14 +45,14 @@ function App() {
   }
 
   const resetModal = () => {
-    setModalError({check: false, message: ''})
+    setModalError({check: false, title: '', message: ''})
   }
 
   return (
     <div className='w-full min-h-screen font-serif font-medium text-orange-400 p-1 app'>
       <PersonForm addNewPerson={addNewPerson} modalError={callModal}/>
       <PersonsList items={persons} />
-      { modalError.check ? <Modal message={modalError.message} resetModal={resetModal} /> : '' }
+      { modalError.check ? <Modal message={modalError.message} title={modalError.title} resetModal={resetModal} /> : '' }
     </div>
   )
 }
